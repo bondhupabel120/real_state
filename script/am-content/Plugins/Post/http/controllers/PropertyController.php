@@ -217,7 +217,7 @@ class PropertyController extends controller
         }
 
         $this->term_id=$id;
-         $info=Terms::with('excerpt','content','postcategory','latitude','longitude','city','medias','facilities','options','child')->find($id);
+        $info=Terms::with('excerpt','content','postcategory','latitude','longitude','city','medias','facilities','options','child')->find($id);
         $input_options=\App\Category::where('type','option')->with(['post_category_option'=>function($q){
             return $q->where('term_id',$this->term_id);
         }])->get();

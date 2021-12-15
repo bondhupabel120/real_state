@@ -3,7 +3,10 @@
 @section('title', 'Create Property')
 
 @section('content')
-    <!-- Wrapper -->
+<link rel="stylesheet" href="{{asset('admin/css/image_uploader.min.css')}}">
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Wrapper -->
     <div id="wrapper">
 
         <!-- Titlebar -->
@@ -116,8 +119,8 @@
                                 <h3>Property Gallery</h3>
                                 <div class="content with-padding">
                                     <div class="col-md-12 submit-section">
-                                        {{-- <form action="http://utouchdesign.com/themes/realfun/file-upload"
-                                            class="dropzone"></form> --}}
+                                        <div 
+                                            class="image-uploader"></div>
                                     </div>
                                 </div>
                             </div>
@@ -254,15 +257,21 @@
             </div>
         </div>
 
-        <script src="{{ theme_asset('jomidar/public/assets2/scripts/dropzone.js') }}"></script>
+        <!-- <script src="{{ theme_asset('jomidar/public/assets2/scripts/dropzone.js') }}"></script> -->
+        
         {{-- <script>
             $(".dropzone").dropzone({
                 dictDefaultMessage: "<i class='sl sl-icon-cloud-upload'></i> Drag & Drop Files Here",
             });
         </script> --}}
+        
     @endsection
 
     @section('js')
+    <script src="{{asset('admin/js/image_uploader.min.js')}}"></script>
+    <script>
+           $(".image-uploader").imageUploader();
+        </script>
         <script>
             function commingSoon() {
                 toastr.success('Coming Soon!');
