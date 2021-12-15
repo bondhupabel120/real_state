@@ -54,8 +54,9 @@
                                     </div>
 
                                     <?php
-                                    $features = \App\PostCategory::with('category')->where('type','feature')->get();
+                                    $features = \App\PostCategory::with('category')->where('type','features')->get()->unique('category_id');
                                     $statuses = \App\PostCategory::with('category')->where('type','status')->get();
+                                    $facilities=\App\Category::where('type','facilities')->get();
                                      ?>
                                     <div class="col-md-6">
                                         <h5>Status</h5>
@@ -206,21 +207,18 @@
                                         <h5 class="margin-top-15">Other Features <span>(optional)</span></h5>
                                         <div class="checkboxes in-row margin-bottom-20">
                                             @foreach($features as $feature)
-                                            <input name="features[]" value="{{$feature->category_id}}" id="check-2" type="checkbox" name="check">
-                                            <label for="check-2">{{$feature->category->name}}</label>
+                                            <input name="features[]" value="{{$feature->category_id}}" id="check{{$feature->category_id}}" type="checkbox">
+                                            <label for="check{{$feature->category_id}}">{{$feature->category->name}}</label>
                                             @endforeach
-                                            {{-- <input name="features[]" id="check-3" type="checkbox" name="check">
-                                            <label for="check-3">Swimming Pool</label>
-                                            <input name="features[]" id="check-4" type="checkbox" name="check">
-                                            <label for="check-4">Central Heating</label>
-                                            <input name="features[]" id="check-5" type="checkbox" name="check">
-                                            <label for="check-5">Laundry Room</label>
-                                            <input name="features[]" id="check-6" type="checkbox" name="check">
-                                            <label for="check-6">Gym</label>
-                                            <input name="features[]" id="check-7" type="checkbox" name="check">
-                                            <label for="check-7">Alarm</label>
-                                            <input name="features[]"  id="check-8" type="checkbox" name="check">
-                                            <label for="check-8">Window Covering</label> --}}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h5 class="margin-top-15">Facilities</h5>
+                                        <div class="checkboxes in-row margin-bottom-20">
+                                            @foreach($facilities as $facility)
+                                            <input name="facilities[]" value="{{$facility->id}}" id="facility{{$facility->id}}" type="checkbox">
+                                            <label for="facility{{$facility->id}}">{{$facility->name}}</label>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
