@@ -57,20 +57,31 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-sm-6">
-                                        <select data-placeholder="Select Area" title="Select Area" class="utf-chosen-select-single-item">
+                                        <select data-placeholder="Beds (Max)" title="Beds (Max)" class="utf-chosen-select-single-item">
                                         <option selected>Beds (max)</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <select data-placeholder="Min Price" title="Min Price" class="utf-chosen-select-single-item">
+                                        <option selected>Price (min)</option>
                                         <option>Afghanistan</option>
                                         <option>Albania</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3 col-sm-6">
-                                        <select data-placeholder="Select Area" title="Select Area" class="utf-chosen-select-single-item">
-                                        <option>Price pw (min)</option>
-                                        <option>Afghanistan</option>
-                                        <option>Albania</option>
-                                        </select>
+                                        <input style="height: 35px" type="number" min="0" name="min_price" class="form-control" placeholder="Price Min">
                                     </div>
                                     <div class="col-md-3 col-sm-6">
+                                        <input style="height: 35px" type="number" min="0" name="max_price" class="form-control" placeholder="Price Max">
+                                    </div>
+                                    {{-- <div class="col-md-3 col-sm-6">
                                         <select data-placeholder="Select Area" title="Select Area" class="utf-chosen-select-single-item">
                                         <option>Price pw (max)</option>
                                         <option>Afghanistan</option>
@@ -83,11 +94,11 @@
                                         <option>Afghanistan</option>
                                         <option>Albania</option>
                                         </select>
-                                    </div>
-                                    <div class="checkboxes in-row">
+                                    </div> --}}
+                                    {{-- <div class="checkboxes in-row">
                                         <input id="check-1" type="checkbox" name="check">
                                         <label for="check-1">Surrounding suburbs</label>
-                                    </div>
+                                    </div> --}}
                                     {{-- <div class="col-md-3 d-none">
                                         <button class="submit"><i class="fa fa-search"></i> Search</button>
                                     </div> --}}
