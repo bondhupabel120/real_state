@@ -29,7 +29,7 @@ class PropertyController extends controller
     public function index()
     {
        $posts=Terms::where('type','property')->with('property_type','property_status_type','post_city')->where('user_id',Auth::id())->latest()->paginate(20);
-       return view('view::agent.property.index2',compact('posts'));
+       return view('view::agent.property.index',compact('posts'));
     }
 
     /**
