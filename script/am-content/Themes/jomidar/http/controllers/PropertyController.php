@@ -244,7 +244,7 @@ class PropertyController extends controller
 
 
         $category= $request->category;
-        return view('view::property.list',compact('category','state','min_price','max_price','status','location','statuses','categories','states','badroom','bathroom','floor','block','input_array','src'));
+        return view('view::property.list2',compact('category','state','min_price','max_price','status','location','statuses','categories','states','badroom','bathroom','floor','block','input_array','src'));
     }
 
     public function map(Request $request){

@@ -74,7 +74,9 @@ class WelcomeController extends controller
     }
 
     public function searchProperty(Request $request){
-        dd($request);
+        if($request->search_item){
+            $
+        }
     }
 
 }

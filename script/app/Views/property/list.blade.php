@@ -52,7 +52,7 @@
                                             @foreach($statuses as $row)
                                             <option value="{{ $row->id }}" @if($status == $row->id) selected="selected" @endif>{{ $row->name }}</option>
                                             @endforeach
-                                            
+
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -67,14 +67,14 @@
                                     <div class="form-group">
                                         <label>{{ __('State') }}</label>
                                         <select class="form-control" name="state">
-                                          
+
                                             @foreach ($states as $row)
                                             <option value="{{ $row->id }}" @if($state == $row->id) selected="selected" @endif>{{ $row->name }}</option>
                                             @endforeach
-                                            
+
                                         </select>
                                     </div>
-                                  
+
                                      @if(in_array(15,$input_array))
                                      <div class="form-group">
                                          <label>{{ __('Number of Blocks') }}</label>
@@ -145,7 +145,7 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="row" id="item_lists">
-                            
+
                         </div>
                          <div class="row align-items-center">
                             <div class="col-lg-6">
@@ -157,7 +157,7 @@
                                 <div class="pagination-area f-right">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center">
-                                          
+
                                         </ul>
                                       </nav>
                                 </div>
