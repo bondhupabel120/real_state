@@ -75,7 +75,13 @@ class WelcomeController extends controller
 
     public function searchProperty(Request $request){
         if($request->search_item){
-            $
+            $limit = 12;
+            $posts = Terms::where('type','property')->where('title', 'LIKE', '%'.$request->search.'%')->where('status',1)->whereHas('min_price')->whereHas('max_price')->whereHas('post_city')->with('post_preview','min_price','max_price','post_city','post_state','user','featured_option','latitude','longitude')->latest()->paginate($limit);
+            return view('view::property.searchProperty.search_result', compact('posts'));
+        } else {
+            $limit = 12;
+            $posts = Terms::where('type','property')->where('status',1)->whereHas('min_price')->whereHas('max_price')->whereHas('post_city')->with('post_preview','min_price','max_price','post_city','post_state','user','featured_option','latitude','longitude')->latest()->paginate($limit);
+            return view('view::property.searchProperty.search_result', compact('posts'));
         }
     }
 
